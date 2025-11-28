@@ -45,7 +45,7 @@
             0% { transform: translateY(0); }
             100% { transform: translateY(-800px); }
         }
-    /* --- estilos para fotos --- */
+
 .fotoDerecha {
     width: 250px;
     float: right;
@@ -67,13 +67,10 @@
     border-radius: 12px;
 }
 
-/* Para que ninguna imagen crezca demasiado */
 img {
     max-width: 100%;
     height: auto;
 }
-
-/* En pantallas pequeñas (celular) quitamos float y centramos */
 @media (max-width: 600px) {
     .fotoDerecha, .fotoIzquierda, .fotoDerecha2{
         float: none;
@@ -85,6 +82,8 @@ img {
     position: relative;
     z-index: 9999;
 }
+
+
     </style>
 </head>
 <body>
@@ -123,9 +122,25 @@ img {
    <p>
      De verdad, te quiero tanto como no te lo imaginas, te amo mucho, demasiado, te amo, amo cada cosa de ti, me encantas. Me gustas, realmente me gustas,  eres totalmente mi tipo. Muchas gracias por estar conmigo, eres lo mejor que tengo en mi vida, aún no sé cómo puedes estar conmigo, cuando tú eres tan increíble, atractivo y cul,  a tu lado me siento como solo un wey random y raro. Te amo.
    </p>
-
    <div style="clear: both;"></div>
 </div>
+    <button class="button"
+    onclick="mostrarmensajeextra('m1')"> haz clic para ver más 1</button>
+    <div id="m1" class="mensaje"> 
+        <p>Un día de estos deberias de venir a darme un abrazo y traerme un kilo de mandarinas</p>
+    </div>
+
+    <button class="button"
+    onclick="mostrarmensajeextra('m2')">haz clic para ver más 2</button>
+    <div id="m2" class="mensaje"> 
+        <p>Si no lo haces es porque no me quieres y me odias, oqei?</p>
+    </div>
+
+     <button class="button"
+    onclick="mostrarmensajeextra('m3')">haz clic para ver más 3</button>
+    <div id="m3" class="mensaje"> 
+        <p>Es bromita, pero si me gustaría que algún día vinieras y me dieras unos buenos abrazos de 3 horas, lo necesito (┬┬﹏┬┬)</p>
+    </div>
 
     <script>
         function mostrarMensaje() {
@@ -143,6 +158,16 @@ img {
 
             setTimeout(() => { corazon.remove(); }, 5000);
         }, 500);
+
+        function mostrarmensajeextra(id) {
+    const elem = document.getElementById(id);
+    const style = window.getComputedStyle(elem).display;
+    if (style === "none") {
+        elem.style.display = "block";
+    } else {
+        elem.style.display = "none";
+    }
+}
     </script>
 
 </body>
